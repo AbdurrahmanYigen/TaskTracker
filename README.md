@@ -8,8 +8,8 @@ Diese Anwendung hilft dir, einen Überblick über deine Aufgaben zu haben und zu
 
 
 ### Motivation
-Keinen Überblick über deine letzten aktivitäten auf der Arbeit, in der Schule oder auch in der Freizeit?
-Mit diesem Projekt ist es leicht gemacht deine Tasks aufzulisten, die Zeit zu Tracken wie lange du an einer Task arbeitest und was du in den Trackings geleistet hast.
+Keinen Überblick über deine Aufgaben auf der Arbeit, in der Schule oder auch in der Freizeit?\
+Mit diesem Projekt ist es leicht gemacht deine Tasks aufzulisten, die Zeit zu tracken wie lange du an einer Task arbeitest und was du in den Trackings geleistet hast.
 
 Diese Projekt benutzt die mySQL Datenbank
 
@@ -17,41 +17,42 @@ Diese Projekt benutzt die mySQL Datenbank
 Um das Projekt aufzusetzen wird Docker verwendet. Verfolge die Folgenden Schritte:
 
 1. Clone dir das Projekt in einen Ordner deiner Wahl
-2. Navigiere in den Ordner `/fwe-ws20-21-756882-ha1/packages/backend`
+2. Navigiere in den Ordner `/fwe-ws20-21-756882-ha2/packages/backend`
 3. Öffne ein Terminal in diesem Ordner und führe den Befehl `npm install` aus um dir die node_modules zu holen
-4. Navigiere jetzt in den Ordner `/fwe-ws20-21-756882-ha1` in dem sich auch die `docker-compose.yml` befindet
-5. Gib hier in die Konsole den Befehl `docker-compose up` oder `docker-compose up -d` ein, um die Datenbank und das Backend zu starten
-6. Um das Backend nutzen zu können musst du vorerst die Tabellen der Datenbank erstellen.
-Öffne dafür ein weiteres Terminal im Ordner `/fwe-ws20-21-756882-ha1` und führe den befehl `docker-compose exec backend npm run typeorm schema:sync` aus.
+4. Navigiere jetzt in den Ordner `/fwe-ws20-21-756882-ha2` in dem sich auch die `docker-compose.yml` befindet
+5. Gib hier in die Konsole den Befehl `docker-compose up` oder `docker-compose up -d` ein, um die Datenbank, das Backend und das Frontend zu starten
+6. Um das Backend nutzen zu können musst du vorerst die Tabellen der Datenbank erstellen.\
+Öffne dafür ein weiteres Terminal im Ordner `/fwe-ws20-21-756882-ha2` und führe den befehl `docker-compose exec backend npm run typeorm schema:sync` aus.
+
+Das Backend läuft standart mäßig auf Port 4000 und das Frontend auf Port 3000.\
+Um auf die Dashboard Seite zu gelangen musst du auf `http://localhost:3000/dashboard`
+
 
 ### Funktionalitäten
-Das Backend läuft standart mäßig auf Port 4000. Also: `http://localhost:4000`
+
 Es ist möglich:
-- `POST /api/task` Tasks zu erstellen
-- `GET /api/task/:taskId` Eine einzelne Task per Id aufzurufen
-- `GET /api/task` Alle Existierenden Tasks aufzurufen
-- `DELETE /api/task/:taskId` Eine Task per Id zu löschen
-- `PATCH /api/task/:taskId` Eine Taks per Id zu bearbeiten
+- Tasks zu erstellen
+- Alle Existierenden Tasks aufzurufen
+- Eine Task zu löschen
+- Eine Taks zu bearbeiten
 
 Es ist möglich: 
-- `POST /api/label` Eine Label zu erstellen
-- `GET /api/label/:labelId` Alle Labels einer Task aufzurufen
-- `GET /api/label` Alle Existierenden Labels aufzurufen
-- `PATCH /api/label/:labelId` Eine Label per Id zu überareiten
-- `DELETE /api/label/:labelId` Eine Label per Id zu löschen
+- Eine/mehrere Label/s zu einer Task zu erstellen (mit `,` bestätigen/trennen)
+- Eine Label von einer Task durch das `x` an den Labels zu löschen
 
 Es ist möglich:
-- `POST api/tracking` Eine Tracking zu erstellen
-- `GET api/tracking/:trackingId` Eine Tracking per Id abzurufen
-- `PATCH api/tracking/:trackingId` Eine Tracking per Id zu bearbeiten
-- `DELETE api/tracking/trackingId` Eine Tracking per Id zu löschen
+- Eine Tracking zu starten
+- Eine Tracking zu stoppen. Danach ist es erforderlich die Description für die Tracking zu beschreiben
+- Durch das drücken auf das graue `i` unter der Total getrackten Zeit, öffnet sich die `Trackings-Seite`, in der alle Trackings aufgelistet werden, die zu der jeweiligen Task gehören
+- Hier ist es möglich jede Tracking zu bearbeiten oder zu löschen.
 
-#### Tests
-Die Applikation kann mithilfe von Postman Collections getestet werden.
-Diese befinden sich im Ordner `/fwe-ws20-21-756882-ha1`
+In dem Eingabefeld oben kann nach Name, Description und Labels gleichzeitig gefiltert werden. Dabei spielt es keine Rolle, ob das Wort nachdem du suchst am Anfang, Mittendrin oder am Ende vorkommt.
+Es werden also alle Tasks angezeigt, in dem das von dir gewünschte Wort in Name, Description oder in den Labels vorkommt.
+
+Durch das Drücken auf HOME oben rechts oder auf das Logo oben links, wird man auf die dashboard Seite weiter geleitet
 
 ##### Freestyle task
-Außerdem ist es möglich aus einer Externen Api motivierende Zitate mit den dazugehörigen Autoren abzurufen `GET /api/motivation`
+Damit beim Abarbeiten der Tasks nicht die Motivation verloren geht, werden auf den Seiten unten immer extrem Motivierende und Inspirierende Zitate mit den zugehörigen Autoren eingeblendet, die auf Knopfdruck geändert werden können
 
 ### Screenshots
 
@@ -60,10 +61,6 @@ Außerdem ist es möglich aus einer Externen Api motivierende Zitate mit den daz
 
 ##### Die Trackings Page einer Task:
 ![Trackings](../doku/Trackings.PNG "TrackingsPage")
-
-##### Datenbank Aufbau
-![Tabellen](../doku/relationenmodell.png "TabellenAufbau")
-
 
 Lizenz
 ----
