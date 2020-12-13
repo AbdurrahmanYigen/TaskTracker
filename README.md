@@ -11,7 +11,7 @@ Diese Anwendung hilft dir, einen Überblick über deine Aufgaben zu haben und zu
 Keinen Überblick über deine Aufgaben auf der Arbeit, in der Schule oder auch in der Freizeit?\
 Mit diesem Projekt ist es leicht gemacht deine Tasks aufzulisten, die Zeit zu tracken wie lange du an einer Task arbeitest und was du in den Trackings geleistet hast.
 
-Diese Projekt benutzt die mySQL Datenbank
+Dieses Projekt benutzt die mySQL Datenbank
 
 ### Installation
 Um das Projekt aufzusetzen wird Docker verwendet. Verfolge die Folgenden Schritte:
@@ -19,12 +19,13 @@ Um das Projekt aufzusetzen wird Docker verwendet. Verfolge die Folgenden Schritt
 1. Clone dir das Projekt in einen Ordner deiner Wahl
 2. Navigiere in den Ordner `/fwe-ws20-21-756882-ha2/packages/backend`
 3. Öffne ein Terminal in diesem Ordner und führe den Befehl `npm install` aus um dir die node_modules zu holen
-4. Navigiere jetzt in den Ordner `/fwe-ws20-21-756882-ha2` in dem sich auch die `docker-compose.yml` befindet
-5. Gib hier in die Konsole den Befehl `docker-compose up` oder `docker-compose up -d` ein, um die Datenbank, das Backend und das Frontend zu starten
-6. Um das Backend nutzen zu können musst du vorerst die Tabellen der Datenbank erstellen.\
+4. Navigiere nun in den Ordner `/fwe-ws20-21-756882-ha2/packages/frontend` und führe hier ebenfalls `npm install` aus.
+5. Navigiere jetzt in den Ordner `/fwe-ws20-21-756882-ha2` in dem sich auch die `docker-compose.yml` befindet
+6. Gib hier in die Konsole den Befehl `docker-compose up` oder `docker-compose up -d` ein, um die Datenbank, das Backend und das Frontend zu starten
+7. Um das Backend nutzen zu können musst du vorerst die Tabellen der Datenbank erstellen.\
 Öffne dafür ein weiteres Terminal im Ordner `/fwe-ws20-21-756882-ha2` und führe den befehl `docker-compose exec backend npm run typeorm schema:sync` aus.
 
-Das Backend läuft standart mäßig auf Port 4000 und das Frontend auf Port 3000.\
+Das Backend läuft standardmäßig auf Port 4000 und das Frontend auf Port 3000.\
 Um auf die Dashboard Seite zu gelangen musst du auf `http://localhost:3000/dashboard`
 
 
