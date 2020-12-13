@@ -3,7 +3,6 @@ Diese Anwendung hilft dir, einen Überblick über deine Aufgaben zu haben und zu
 
 ![Logo](../doku/logo.PNG "Logo")
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 
 
