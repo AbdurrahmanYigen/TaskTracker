@@ -1,9 +1,6 @@
 # Time-Tracker
 Diese Anwendung hilft dir, einen Überblick über deine Aufgaben zu haben und zu Managen
 
-![Logo](../doku/logo.PNG "Logo")
-
-
 
 
 ### Motivation
